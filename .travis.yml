@@ -1,1 +1,9 @@
-
+## it will be java  instead of language: node_js
+node_js:
+- '12'
+- '14'
+script:
+- echo 'Starting'
+- npm install
+- echo 'Testing'
+- npm test

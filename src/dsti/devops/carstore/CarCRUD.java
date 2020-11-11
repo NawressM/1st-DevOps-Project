@@ -97,5 +97,22 @@ public class CarCRUD {
         return rowDeleted;     
     }
      
+    public boolean updateCar(Car car) throws SQLException {
+        String sql = "UPDATE car SET brand = ?, model = ?, price = ?";
+        sql += " WHERE matriculation = ?";
+        connect();
+         
+        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+        statement.setString(1, car.getBrand());
+        statement.setString(2, car.getModel());
+        statement.setFloat(3, car.getPrice());
+        statement.setString(4, car.getMatriculation());
+         
+        boolean rowUpdated = statement.executeUpdate() > 0;
+        statement.close();
+        disconnect();
+        return rowUpdated;     
+    }
+     
     
 }

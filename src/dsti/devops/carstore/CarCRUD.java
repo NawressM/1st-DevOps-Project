@@ -114,5 +114,28 @@ public class CarCRUD {
         return rowUpdated;     
     }
      
-    
+    public Car getCar(String matriculation) throws SQLException {
+        Car car = null;
+        String sql = "SELECT * FROM car WHERE matriculation = ?";
+         
+        connect();
+         
+        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+        statement.setString(1, matriculation);
+         
+        ResultSet resultSet = statement.executeQuery();
+         
+        if (resultSet.next()) {
+            String brand = resultSet.getString("brand");
+            String model = resultSet.getString("model");
+            float price = resultSet.getFloat("price");
+             
+            car = new Car(matriculation, brand, model, price);
+        }
+         
+        resultSet.close();
+        statement.close();
+         
+        return car;
+    }
 }

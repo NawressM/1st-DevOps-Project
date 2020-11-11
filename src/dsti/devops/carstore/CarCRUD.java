@@ -2,7 +2,12 @@ package dsti.devops.carstore;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
  
 
 public class CarCRUD {
@@ -33,6 +38,21 @@ public class CarCRUD {
         if (jdbcConnection != null && !jdbcConnection.isClosed()) {
             jdbcConnection.close();
         }
+    }
+     
+    public boolean insertCar(Car car) throws SQLException {
+        String sql = "INSERT INTO car (brand, model, price) VALUES (?, ?, ?)";
+        connect();
+         
+        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+        statement.setString(1, car.getBrand());
+        statement.setString(2, car.getModel());
+        statement.setFloat(3, car.getPrice());
+         
+        boolean rowInserted = statement.executeUpdate() > 0;
+        statement.close();
+        disconnect();
+        return rowInserted;
     }
      
 }

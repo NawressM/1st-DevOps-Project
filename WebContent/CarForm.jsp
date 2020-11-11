@@ -35,7 +35,10 @@
             </caption>
                 <c:if test="${car != null}">
                     <input type="hidden" name="matriculation" value="<c:out value='${car.matriculation}' />" />
-                </c:if>           
+                </c:if>   
+                <c:if test="${car == null}">
+                    <input type="text" name="matriculation" size="45" value="<c:out value='${car.matriculation}' />" />
+                </c:if>          
             <tr>
                 <th>Title: </th>
                 <td>

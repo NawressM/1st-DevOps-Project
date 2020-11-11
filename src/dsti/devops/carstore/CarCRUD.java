@@ -55,4 +55,32 @@ public class CarCRUD {
         return rowInserted;
     }
      
+    public List<Car> listAllCars() throws SQLException {
+        List<Car> listCar = new ArrayList<>();
+         
+        String sql = "SELECT * FROM car";
+         
+        connect();
+         
+        Statement statement = jdbcConnection.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+         
+        while (resultSet.next()) {
+            String matriculation = resultSet.getString("matriculation");
+            String brand = resultSet.getString("brand");
+            String model = resultSet.getString("model");
+            float price = resultSet.getFloat("price");
+             
+            Car car = new Car(matriculation, brand, model, price);
+            listCar.add(car);
+        }
+         
+        resultSet.close();
+        statement.close();
+         
+        disconnect();
+         
+        return listCar;
+    }
+     
 }

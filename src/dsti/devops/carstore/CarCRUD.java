@@ -83,4 +83,19 @@ public class CarCRUD {
         return listCar;
     }
      
+    public boolean deleteCar(Car car) throws SQLException {
+        String sql = "DELETE FROM car where matriculation = ?";
+         
+        connect();
+         
+        PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+        statement.setString(1, car.getMatriculation());
+         
+        boolean rowDeleted = statement.executeUpdate() > 0;
+        statement.close();
+        disconnect();
+        return rowDeleted;     
+    }
+     
+    
 }

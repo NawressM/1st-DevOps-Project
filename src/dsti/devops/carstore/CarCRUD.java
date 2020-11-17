@@ -41,13 +41,14 @@ public class CarCRUD {
     }
      
     public boolean insertCar(Car car) throws SQLException {
-        String sql = "INSERT INTO car (brand, model, price) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO car (matriculation,brand, model, price) VALUES (?, ?, ?, ?)";
         connect();
          
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
-        statement.setString(1, car.getBrand());
-        statement.setString(2, car.getModel());
-        statement.setFloat(3, car.getPrice());
+        statement.setString(1, car.getMatriculation());
+        statement.setString(2, car.getBrand());
+        statement.setString(3, car.getModel());
+        statement.setFloat(4, car.getPrice());
          
         boolean rowInserted = statement.executeUpdate() > 0;
         statement.close();

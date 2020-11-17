@@ -6,9 +6,17 @@
 <head>
 	<meta charset="UTF-8">
     <title>Cars Store Application</title>
+    <style>
+        body,html{
+                    background-image      :  url("<c:url value='/images/CarStore1.jpg'/>");
+                    background-attachment : fixed;
+                    background-position   : center center;
+                    background-size       : cover;  
+                }
+    </style>
 </head>
 
-<body background='./images/CarStore1.jpg'>
+<body>
     <center>
         <h1>Cars Management</h1>
         <h2>

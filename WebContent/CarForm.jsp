@@ -7,7 +7,7 @@
     <title>Cars Store Application</title>
 </head>
 <body>
-    <center>
+    <div style="text-align: center">
         <h1>Cars Management</h1>
         <h2>
             <a href="/new">Add New Car</a>
@@ -15,16 +15,15 @@
             <a href="/list">List All Cars</a>
              
         </h2>
-    </center>
+    </div>
     <div align="center">
         <c:if test="${car != null}">
-            <form action="update" method="post">
+            <form action="update" method="post"></form>
         </c:if>
         <c:if test="${car == null}">
-            <form action="insert" method="post">
+            <form action="insert" method="post"></form>
         </c:if>
-        <table border="1" cellpadding="5">
-            <caption>
+        
                 <h2>
                     <c:if test="${car != null}">
                         Edit Car
@@ -33,7 +32,7 @@
                         Add New Car
                     </c:if>
                 </h2>
-            </caption>
+        <table border="1" style="border-spacing: 5px;">
                 <c:if test="${car != null}">
                     <input type="hidden" name="matriculation" value="<c:out value='${car.matriculation}' />" />
                 </c:if>   
@@ -70,7 +69,6 @@
                 </td>
             </tr>
         </table>
-        </form>
     </div>   
 </body>
 </html>

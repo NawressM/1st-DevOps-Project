@@ -1,31 +1,12 @@
-# Dockerfile
+FROM maven:3.6.3-openjdk-11 as builder
+COPY . /usr/src/devops
+WORKDIR /usr/src/devops
+RUN mvn package
 
-FROM  phusion/baseimage:0.9.17
+FROM tomcat:8.0-alpine
+ENV JAVA_OPTS="-XX:PermSize=1024m -XX:MaxPermSize=512m"
+COPY config/tomcat-users.xml /usr/local/tomcat/conf/
+COPY --from=builder /usr/src/devops/target /usr/local/tomcat/webapps/
 
-MAINTAINER  Author Nawress <nawrass.mn@gmail.com>
+EXPOSE 8080
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
-
-RUN apt-get -y update
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-software-properties software-properties-common
-
-ENV JAVA_VER 8
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
-
-RUN echo 'deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list && \
-    echo 'deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main' >> /etc/apt/sources.list && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886 && \
-    apt-get update && \
-    echo oracle-java${JAVA_VER}-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections && \
-    apt-get install -y --force-yes --no-install-recommends oracle-java${JAVA_VER}-installer oracle-java${JAVA_VER}-set-default && \
-    apt-get clean && \
-    rm -rf /var/cache/oracle-jdk${JAVA_VER}-installer
-
-RUN update-java-alternatives -s java-8-oracle
-
-RUN echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> ~/.bashrc
-
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-CMD ["/sbin/my_init"]

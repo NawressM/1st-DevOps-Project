@@ -1,0 +1,29 @@
+# These are the default stages.
+image: docker:latest
+services:
+  - docker:dind
+
+#before_script:
+#  - apt-get update -qy
+#  - apt-get install -y ruby-dev
+#  - gem install dpl
+
+stages:
+  - build
+  - test
+  - deploy
+
+maven-build:
+  image: maven:3.6.3-openjdk-11
+  stage: build
+  script:
+    - echo "Maven build started"
+    - mvn verify
+
+artifact-deploy:
+  type: deploy
+  stage: deploy
+  image: ruby:latest
+  script:
+    - dpl --provider=heroku --app=$HEROKU_APP_STAGING --api-key=$HEROKU_API_KEY
+

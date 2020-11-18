@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <center>
+    <div style="text-align: center">
         <h1>Cars Management</h1>
         <h2>
             <a href="/new">Add New Car</a>
@@ -25,10 +25,11 @@
             <a href="/list">List All Cars</a>
              
         </h2>
-    </center>
+    </div>
     <div align="center">
-        <table border="1" cellpadding="5">
-            <caption><h2>List of Cars</h2></caption>
+    
+        <h2>List of Cars</h2>
+        <table border="1" style="border-spacing: 5px;">
             <tr>
                 <th>Matriculation</th>
                 <th>Brand</th>

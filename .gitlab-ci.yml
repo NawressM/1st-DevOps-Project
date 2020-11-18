@@ -1,21 +1,24 @@
 # These are the default stages.
 image: maven:3.6.3-openjdk-11
+before_script:
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - gem install dpl
 
 stages:
   - build
   - test
   - deploy
 
-# This is the name of the job.
-# You can choose it freely.
-maven_build:
-  # A job is always executed within a stage.
-  # If no stage is set, it defaults to 'test'.
+build:
   stage: test
-  #tags:
-  #  - maven
-  # Here you can execute arbitrate terminal commands.
-  # If any of the commands returns a non zero exit code the job fails.
   script:
     - echo "Maven build started"
     - mvn verify
+
+deploy:
+  type: deploy
+  stage: deploy
+  image: ruby:latest
+  script:
+    - dpl --provider=heroku --app=$HEROKU_APP_STAGING --api-key=$HEROKU_API_KEY

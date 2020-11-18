@@ -1,4 +1,5 @@
 # These are the default stages.
+image: maven:latest
 
 stages:
   - build
@@ -17,4 +18,4 @@ maven_build:
   # If any of the commands returns a non zero exit code the job fails.
   script:
     - echo "Maven build started"
-    - $MAVEN_HOME/bin/mvn verify
+    - mvn verify

@@ -17,4 +17,5 @@ maven_build:
   # If any of the commands returns a non zero exit code the job fails.
   script:
     - echo "Maven build started"
-    - mvn verify
+    - $MAVEN_HOME/bin/mvn clean
+    - $MAVEN_HOME/bin/mvn verify

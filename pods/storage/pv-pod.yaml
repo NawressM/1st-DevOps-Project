@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: devops-project-task-pv-pod
+  name: devops-project-pv-pod
 spec:
   volumes:
     - name: devops-project-pv-storage

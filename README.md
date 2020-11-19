@@ -14,5 +14,12 @@ Each car is decribed by :
 - price
 
 ## 2. Apply CI/CD pipeline with GitLab
-   * CI PART :
+   * CI PART : here i used gitlab-ci .
    
+   
+   
+   
+# Used Usefull Links :
+https://malike.github.io/Gitlab-CI-CD-Pipeline.html
+https://dzone.com/articles/automate-spring-boot-app-deployment-with-gitlab-ci
+https://dashboard.heroku.com/apps/devops-project-s20

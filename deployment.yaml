@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops-project-s20
-spec:
+  name: devops-project-deploy
   replicas: 2
   selector:
     matchLabels:

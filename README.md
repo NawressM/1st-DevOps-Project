@@ -2,7 +2,7 @@
 This is my first challenge using DevOps tools.
 it includes different tasks.
 
-## 1. Create a web application : 
+## 1. Create a web application (Java, JSP, maven, MySql, Tomcat): 
 I created a web application based on java/jsp and maven .
 
 The database used is : MySql.
@@ -22,7 +22,7 @@ For test and validation purpose, the application has been deployed locally on To
 
 ## 2. Apply CI/CD pipeline with GitLab
 
-   ### CI PART : here i used gitlab-ci 
+   ### CI Part : (gitlab-ci)
    I imported my github repository into a new project in GitLAB CI.
    
    Then, i created .gitlab-ci.yml file which includes different instructions.
@@ -35,7 +35,18 @@ For test and validation purpose, the application has been deployed locally on To
    To setup the host server, I installed gitlab runner on my local machine then I registred the CI/CD pipeline to be able to run it.
    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/Pipline_running.JPG) 
    
+   ### CD Part : (Heroku)
+   To be able to do the CD part, I used Heroku where i created my project target.
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/app_built in Herouku.JPG)
    
+   To verify this pipeline, we go back to gitlab-ci where we can check the status of the different stages :
+      ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/Pipline_passed.JPG)
+   
+   ## 3. Configure and provision a virtual environment and run your application using IaC approach :
+   
+   ## 4. Build Docker image of your application :
+   
+
    
    
    

@@ -11,7 +11,7 @@ spec:
     - name: devops-project-pv-container
       image: devops_img
       ports:
-        - containerPort: 8080
+        - containerPort: 80
           name: "http-server"
       volumeMounts:
         - mountPath: "/usr/share/devops/html"

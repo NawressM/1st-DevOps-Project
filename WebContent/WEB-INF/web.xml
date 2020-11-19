@@ -8,17 +8,17 @@
  
     <context-param>
         <param-name>jdbcURL</param-name>
-        <param-value>jdbc:mysql://localhost:3306/carstore?serverTimezone=UTC</param-value>
+        <param-value>jdbc:mysql://${MYSQL_HOSTNAME}:3306/${MYSQL_DATABASE}?serverTimezone=UTC</param-value>
     </context-param>
  
     <context-param>
         <param-name>jdbcUsername</param-name>
-        <param-value>root</param-value>
+        <param-value>${MYSQL_USER}</param-value>
     </context-param>
  
     <context-param>
         <param-name>jdbcPassword</param-name>
-        <param-value>nm116421M</param-value>
+        <param-value>${MYSQL_PASSWORD}</param-value>
     </context-param>
  
     <servlet>

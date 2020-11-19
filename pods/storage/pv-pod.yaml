@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devops-project-task-pv-pod
+spec:
+  volumes:
+    - name: devops-project-pv-storage
+      persistentVolumeClaim:
+        claimName: devops-project-pv-claim
+  containers:
+    - name: devops-project-pv-container
+      image: devops_img
+      ports:
+        - containerPort: 8080
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/devops/html"
+          name: devops-project-pv-storage
+
+

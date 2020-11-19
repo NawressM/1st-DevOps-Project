@@ -1,39 +1,37 @@
-version: '3' #https://www.digitalocean.com/community/tutorials/containerizing-a-node-js-application-for-development-with-docker-compose
+version: '3.3' #https://www.digitalocean.com/community/tutorials/containerizing-a-node-js-application-for-development-with-docker-compose
 
 services:
-  nodejs:
+  web:
+    depends_on:
+      - db
     build:
       context: .
       dockerfile: Dockerfile
-    image: nodejs
-    container_name: nodejs
+    image: web
+    container_name: web
     restart: unless-stopped
-    env_file: .env
     environment:
-      - MONGO_USERNAME=$MONGO_USERNAME
-      - MONGO_PASSWORD=$MONGO_PASSWORD
-      - MONGO_HOSTNAME=db
-      - MONGO_PORT=$MONGO_PORT
-      - MONGO_DB=$MONGO_DB
+      MYSQL_HOSTNAME: db
+      MYSQL_ROOT_PASSWORD: nm116421M
+      MYSQL_DATABASE: carstore
+      MYSQL_USER: root
+      MYSQL_PASSWORD: nm116421M
     ports:
       - "80:8080"
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
     networks:
       - app-network
-    command: ./wait-for.sh db:27017 -- /home/node/app/node_modules/.bin/nodemon app.js
 
   db:
-    image: mongo:4.1.8-xenial
+    image: mysql:5.7
     container_name: db
-    restart: unless-stopped
-    env_file: .env
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
-      - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
     volumes:
-      - dbdata:/data/db
+      - data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: nm116421M
+      MYSQL_DATABASE: carstore
+      MYSQL_USER: root
+      MYSQL_PASSWORD: nm116421M
     networks:
       - app-network
 
@@ -42,5 +40,4 @@ networks:
     driver: bridge
 
 volumes:
-  dbdata:
-  node_modules:
+  data:

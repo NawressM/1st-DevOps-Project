@@ -24,3 +24,4 @@ https://malike.github.io/Gitlab-CI-CD-Pipeline.html
 https://dzone.com/articles/automate-spring-boot-app-deployment-with-gitlab-ci
 https://dashboard.heroku.com/apps/devops-project-s20
 https://linuxize.com/post/how-to-list-docker-containers/
+https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/

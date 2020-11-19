@@ -2,6 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: devops-project-deploy
+<<<<<<< HEAD
+=======
+spec:
+>>>>>>> 61e1cb827e795e38c7f6eaa7e07a44fedb4c5757
   replicas: 2
   selector:
     matchLabels:

@@ -1,20 +1,42 @@
-# This is my devops project :
+# Nawress devops project :
+This is my first challenge using DevOps tools.
 it includes different tasks.
 
 ## 1. Create a web application : 
-i used a web application with java code and maven .
+I created a web application based on java/jsp and maven .
 
-i wrote tests about this CRUD app.
+The database used is : MySql.
 
-This application when it runs, open a web page containing a list of cars.
-Each car is decribed by :
+I wrote unit tests for this CRUD app in Test.java .
+
+This application is a sort of online car store to manage cars.
+
+Each car is decribed by its :
 - matriculation
 - brand
 - model
 - price
 
+we can list, update, add, delete cars.
+For test and validation purpose, the application has been deployed locally on Tomcat server.
+
 ## 2. Apply CI/CD pipeline with GitLab
-   * CI PART : here i used gitlab-ci .
+
+   ### CI PART : here i used gitlab-ci 
+   I imported my github repository into a new project in GitLAB CI.
+   
+   Then, i created .gitlab-ci.yml file which includes different instructions.
+   3 Stages has been defined for this pipeline :
+   - Build
+   - Test
+   - Deploy
+    
+   
+   To setup the host server, I installed gitlab runner on my local machine then I registred the CI/CD pipeline to be able to run it.
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/Pipline_running.JPG) 
+   
+   
+   
    
    
    

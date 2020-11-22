@@ -19,6 +19,8 @@ Each car is decribed by its :
 
 we can list, update, add, delete cars.
 For test and validation purpose, the application has been deployed locally on Tomcat server.
+![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/WEB_APP_Interface.JPG)
+
 
 ## 2. Apply CI/CD pipeline with GitLab
 
@@ -37,18 +39,35 @@ For test and validation purpose, the application has been deployed locally on To
    
    ### CD Part : (Heroku)
    To be able to do the CD part, I used Heroku where i created my project target.
-   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/app_built in Herouku.JPG)
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/app_built_in_Heroku.JPG)
    
+   Successufuls deployement are automatically detected by Heroku at each pull request on master branch:
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/Heroku_deploys.JPG)
+
    To verify this pipeline, we go back to gitlab-ci where we can check the status of the different stages :
       ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/Pipline_passed.JPG)
    
-   ## 3. Configure and provision a virtual environment and run your application using IaC approach :
+## 3. Configure and provision a virtual environment and run your application using IaC approach :
+    -- Sorry, I had a health problem so I didn't have a enough time to finish this part. 
+    
+## 4. Build Docker image of your application :
+   ### 1- Create Docker image of your application
+   After creating the Dockerfile and .dockerignore files, I executed this comand to generate the image:
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/docker_build.JPG)
    
-   ## 4. Build Docker image of your application :
-   
+   Then I got a message confirming that the build was successfull
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/docker_image_built.JPG)
 
+   ### 2- Push the image to Docker Hub
+   To run the docker image I executed this command:
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/docker_run.JPG)
    
+   Then to check active docker container I executed this command:
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/docker_ps.JPG)
    
+ ## 5. Make container orchestration using Docker Compose :  
+    First I created the docker-compose.yml file then I executed command:
+    
    
    
    

@@ -53,7 +53,7 @@ For test and validation purpose, the application has been deployed locally on To
    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/Pipline_passed.JPG)
    
 ## 3. Configure and provision a virtual environment and run your application using IaC approach :
-    -- Sorry, I had a health problem so I didn't have a enough time to finish this part. 
+    -- Sorry, I had a health problem so I didn't have a enough time to finish this part. I will try to work on it next days.
     
 ## 4. Build Docker image of your application :
    ### 1- Create Docker image of your application :
@@ -129,7 +129,7 @@ For test and validation purpose, the application has been deployed locally on To
      There is a error in the status . before that when i first tried it was pending . However, it seems it has an error in the image.
      
  ## 7.Make a service mesh using Istio
-   For this long part, i didn't succed to get somthing. I will try again next days.
+   Same thing as part 3. I will try to do it next days.
    
 ## Tools used :
  - Github

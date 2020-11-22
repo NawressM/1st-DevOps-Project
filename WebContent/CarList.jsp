@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<body>
+<body  style="background-color: cyan;">
     <div style="text-align: center">
         <h1>Cars Management</h1>
         <h2>

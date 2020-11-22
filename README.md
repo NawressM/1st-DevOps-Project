@@ -1,4 +1,9 @@
 # This is my first devops project :
+## Author :
+##### Nawress Mahmoudi
+##### Data Engineer student, DSTI, Spring Cohort 2020
+ ##### E-mail adress : nawress.abdelkabir@edu.dsti.institute
+
 This is my first challenge using DevOps tools.
 it includes different tasks.
 
@@ -89,34 +94,54 @@ For test and validation purpose, the application has been deployed locally on To
    I successfully installed Kubernetes cluster using Minikube. And it is running.
    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/minikube_start_status.JPG)
   
-   Then , i created 4 yaml files :
+   Then , I created many yaml files :
    
    1-  Deployments file :
-     I configured a [a relative link](deployment.yaml)
+     I configured a [deployment.yaml]
     ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/deployment_kubectl.JPG)
  
    2- Services file : 
-    I configured a [a relative link](service.yaml)
+    I configured a [service.yaml]
      ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/create_services_get.JPG)
    
-   After that , i made an index.html file  :
+   After that , i made an [index.html] :
    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/indexXML.JPG) 
      
    3- Persistent volume file : 
-   I configured a [a relative link](pv-volume.yaml) 
-   And then, I created the Persistent Volume . The "get pod" shows us information about what we created.
-     ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/pv_creation.JPG)
+   I configured a [pv-volume.yaml] 
+   
+   And then, I created the Persistent Volume . The "get" shows us information about what we created.
+   The output shows the status of the PersistentVolume : available.
+  ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/pv_status_available.JPG)
      
    4- Persistent volume claim file :
-     ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/pvClaim_creation.JPG)
+   I configured a [pv-claim.yaml] . Then a created the persistent volume claim. 
+   It shows now that the status of PV is Bound ! 
+    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/PVC_status_bound.JPG)
+    
+   5- Pod creation :
+   The next step is to create a Pod that uses your PersistentVolumeClaim as a volume, configured in [pv-pod.yaml] 
+   
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/pod_creation.JPG)
+   
+   When showing the pod information :
+     ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/errTmagePull_get_pod.JPG)
+     There is a error in the status . before that when i first tried it was pending . However, it seems it has an error in the image.
      
-     
-    
-    
-    
+ ## 7.Make a service mesh using Istio
+   For this long part, i didn't succed to get somthing. I will try again next days.
    
-   
-   
+## Tools used :
+ - Github
+ - MySql
+ - Java
+ - maven
+ - Tomcat
+ - Gitlab-CI
+ - Heroku
+ - Docker
+ - Kubernetes
+ 
 ## Usefull Links :
 https://malike.github.io/Gitlab-CI-CD-Pipeline.html
 https://dzone.com/articles/automate-spring-boot-app-deployment-with-gitlab-ci

@@ -97,7 +97,7 @@ For test and validation purpose, the application has been deployed locally on To
    Then , I created many yaml files :
    
    1-  Deployments file :
-     I configured a [deployment.yaml]
+     I configured a [a link](/pods/storage/deployment.yaml)
     ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/deployment_kubectl.JPG)
  
    2- Services file : 
@@ -108,7 +108,7 @@ For test and validation purpose, the application has been deployed locally on To
    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/indexXML.JPG) 
      
    3- Persistent volume file : 
-   I configured a (pv-volume.yaml) 
+   I configured a [pv-volume.yaml ]
    
    And then, I created the Persistent Volume . The "get" shows us information about what we created.
    The output shows the status of the PersistentVolume : available.

@@ -108,7 +108,7 @@ For test and validation purpose, the application has been deployed locally on To
    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/indexXML.JPG) 
      
    3- Persistent volume file : 
-   I configured a [pv-volume.yaml] 
+   I configured a (pv-volume.yaml) 
    
    And then, I created the Persistent Volume . The "get" shows us information about what we created.
    The output shows the status of the PersistentVolume : available.
@@ -134,7 +134,7 @@ For test and validation purpose, the application has been deployed locally on To
 ## Tools used :
  - Github
  - MySql
- - Java
+ - Java , JSP
  - maven
  - Tomcat
  - Gitlab-CI
@@ -143,10 +143,11 @@ For test and validation purpose, the application has been deployed locally on To
  - Kubernetes
  
 ## Usefull Links :
-https://malike.github.io/Gitlab-CI-CD-Pipeline.html
-https://dzone.com/articles/automate-spring-boot-app-deployment-with-gitlab-ci
-https://dashboard.heroku.com/apps/devops-project-s20
-https://linuxize.com/post/how-to-list-docker-containers/
-https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/
-https://dev.to/pmgysel/from-a-web-application-to-a-docker-image-to-a-deployment-with-kubernetes-171b
-https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
+- https://malike.github.io/Gitlab-CI-CD-Pipeline.html
+- https://dzone.com/articles/automate-spring-boot-app-deployment-with-gitlab-ci
+- https://dashboard.heroku.com/apps/devops-project-s20
+- https://linuxize.com/post/how-to-list-docker-containers/
+- https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/
+- https://dev.to/pmgysel/from-a-web-application-to-a-docker-image-to-a-deployment-with-kubernetes-171b
+- https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
+## Thanks for your help during the DevOps course ! :)

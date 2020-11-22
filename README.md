@@ -1,4 +1,4 @@
-# Nawress devops project :
+# This is my first devops project :
 This is my first challenge using DevOps tools.
 it includes different tasks.
 
@@ -74,20 +74,54 @@ For test and validation purpose, the application has been deployed locally on To
    
    
  ## 5. Make container orchestration using Docker Compose :  
+ 
     First I created the docker-compose.yml file then I executed command:
+    
    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/docker_compose.JPG)
    
-   Then build has been processed and I got this message:   
+   Then build has been processed and I got this message:  
+   
    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/docker_compose_success.JPG)
+   
+   
+   ## 6. Make docker orchestration using Kubernetes :
+   
+   I successfully installed Kubernetes cluster using Minikube. And it is running.
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/minikube_start_status.JPG)
+  
+   Then , i created 4 yaml files :
+   
+   1-  Deployments file :
+     I configured a [a relative link](deployment.yaml)
+    ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/deployment_kubectl.JPG)
+ 
+   2- Services file : 
+    I configured a [a relative link](service.yaml)
+     ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/create_services_get.JPG)
+   
+   After that , i made an index.html file  :
+   ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/indexXML.JPG) 
+     
+   3- Persistent volume file : 
+   I configured a [a relative link](pv-volume.yaml) 
+   And then, I created the Persistent Volume . The "get pod" shows us information about what we created.
+     ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/images/pv_creation.JPG)
+     
+   4- Persistent volume claim file :
+     ![alt text](https://github.com/NawressM/1st-DevOps-Project/blob/master/pvClaim_creation.JPG)
+     
+     
     
     
+    
    
    
    
-# Used Usefull Links :
+## Usefull Links :
 https://malike.github.io/Gitlab-CI-CD-Pipeline.html
 https://dzone.com/articles/automate-spring-boot-app-deployment-with-gitlab-ci
 https://dashboard.heroku.com/apps/devops-project-s20
 https://linuxize.com/post/how-to-list-docker-containers/
 https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/
 https://dev.to/pmgysel/from-a-web-application-to-a-docker-image-to-a-deployment-with-kubernetes-171b
+https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/
